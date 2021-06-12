@@ -17,20 +17,15 @@ public class operacionServlet extends HttpServlet {
         String role = request.getParameter("role");
         String parametro = role.toUpperCase();
 
-        if(parametro.equals("PROPETARIO")) {
+        if (parametro.equals("PROPETARIO")) {
             response.sendRedirect("./HTML/Owner.html");
-        }else if(parametro.equals("VETERINARIA")){
+        }
+        if (parametro.equals("VETERINARIA")) {
             response.sendRedirect("./HTML/Vet.html");
-
-        }else if(parametro.equals("FUNCIONARIO")){
+        }
+        if (parametro.equals("FUNCIONARIO")) {
             response.sendRedirect("./HTML/Fun.html");
         }
-
-
-
-
-
-        response.sendRedirect("./author.jsp");
     }
 
 }
