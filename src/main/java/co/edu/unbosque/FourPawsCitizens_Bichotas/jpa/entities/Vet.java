@@ -1,16 +1,18 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import net.bytebuddy.agent.builder.AgentBuilder;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Vet")
 @PrimaryKeyJoinColumn
 public class Vet extends UserApp{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "name", nullable = false)
     private String name;
 
@@ -19,6 +21,14 @@ public class Vet extends UserApp{
 
     @Column(name = "neighborhood", nullable = false)
     private String neighborhood;
+
+
+    @OneToMany(mappedBy = "Vet")
+    List<Visit> visitList;
+
+    @ManyToOne
+    @JoinColumn(name = "userApp")
+    private UserApp userApp;
 
     public Vet(){
     }

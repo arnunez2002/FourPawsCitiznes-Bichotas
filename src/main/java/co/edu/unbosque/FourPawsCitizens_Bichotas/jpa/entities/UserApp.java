@@ -1,14 +1,16 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
-@Entity
+@Entity(name = "UsersApp")
 @Table(name = "UserApp")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class UserApp {
 
     @Id
-    @Column(name = "username")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_name")
     private String username;
 
     @Column(name = "password", nullable = false)
@@ -19,6 +21,18 @@ public abstract class UserApp {
 
     @Column(name = "role", nullable = false)
     private String role;
+
+
+
+    @OneToMany(mappedBy = "userApp")
+    List<Owner> ownerList;
+
+    @OneToMany(mappedBy = "userApp")
+    List<Official> officalList;
+
+    @OneToMany(mappedBy = "userApp")
+    List<Vet> vetList;
+
 
     public UserApp() {
     }
