@@ -1,15 +1,24 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
-@Entity
+
+@Entity(name="owners")
 @Table(name = "Owner")
 @PrimaryKeyJoinColumn
+
+  //@@NamedQueries({
+  //       @NamedQuery(name = "Owner.findByName",
+  //       query = "SELECT a FROM Owner a WHERE a.name = :name")
+  //})
+
+
 public class Owner extends UserApp {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "person_id", nullable = false, unique = true)
     private Long personId;
 
@@ -21,6 +30,10 @@ public class Owner extends UserApp {
 
     @Column(name = "neighborhood", nullable = false)
     private String neighborhood;
+
+
+    @OneToMany(mappedBy = "Owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Pet> pets = new ArrayList<>();
 
     public Owner() {
     }
