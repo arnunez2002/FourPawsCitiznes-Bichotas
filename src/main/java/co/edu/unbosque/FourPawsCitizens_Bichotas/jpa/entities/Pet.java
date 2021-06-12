@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name = "Pet")
 @NamedQueries({
         @NamedQuery(name = "Pet.findById", query = "SELECT b FROM Pet b WHERE b.id=: id"),
-        @NamedQuery(name = "Book.findAll",
+        @NamedQuery(name = "Pet.findAll",
                 query= "SELECT b FROM Pet b")
 })
 
@@ -130,11 +130,4 @@ public class Pet {
         this.owner_id = owner_id;
     }
 
-    public List<Pet> getEdition() {
-        return edition;
-    }
-
-    public void setEdition(List<Pet> edition) {
-        this.edition = edition;
-    }
 }
