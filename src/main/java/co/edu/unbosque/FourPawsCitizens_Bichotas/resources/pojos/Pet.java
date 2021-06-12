@@ -13,7 +13,7 @@ public class Pet {
     private String sex;
     private String picture;
     private int owner_id;
-    private List<Owner> listOwner = new ArrayList<Owner>();
+    private List<Owner> listOwner = new ArrayList<>();
 
     public Pet(int pet_id, String microchip, String name, String species, String race, String size, String sex, String picture, int owner_id, List<Owner> listOwner) {
         this.pet_id = pet_id;
