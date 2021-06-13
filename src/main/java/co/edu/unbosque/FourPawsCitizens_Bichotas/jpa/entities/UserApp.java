@@ -6,7 +6,7 @@ import java.util.List;
 @Entity(name = "UsersApp")
 @Table(name = "UserApp")
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class UserApp {
+public abstract class UserApp{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

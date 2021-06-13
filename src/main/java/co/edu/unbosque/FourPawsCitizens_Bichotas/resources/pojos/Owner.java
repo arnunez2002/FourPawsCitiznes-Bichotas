@@ -1,5 +1,4 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos;
-import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.Pet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,28 +34,48 @@ public class Owner {
         this.pets = pets;
     }
 
+    public List<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<Pet> pets) {
+        this.pets = pets;
+    }
+
     public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getPerson_id() {
         return person_id;
     }
 
+    public void setPerson_id(int person_id) {
+        this.person_id = person_id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public String getNeighborhood() {
-        return neighborhood;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public List<Pet> getPets() {
-        return pets;
+    public String getNeighborhood() {
+        return neighborhood;
     }
 
     public void setNeighborhood(String neighborhood) {

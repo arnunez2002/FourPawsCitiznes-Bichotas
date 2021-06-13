@@ -5,7 +5,7 @@
              version="2.2">
     <persistence-unit name="default">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <jta-data-source>java:/PostgresDS</jta-data-source>
+        <jta-data-source>java:/LasBichotasDS</jta-data-source>
         <class>co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.Official</class>
         <class>co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.Owner</class>
         <class>co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.UserApp</class>

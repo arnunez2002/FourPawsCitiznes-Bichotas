@@ -4,6 +4,7 @@ import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.Owner;
 import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.repositories.OwnerRepository;
 import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.repositories.OwnerRepositoryImpl;
 import co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos.OwnerPOJO;
+import co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos.VetPOJO;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -12,11 +13,11 @@ import javax.persistence.Persistence;
 import java.util.Optional;
 
 @Stateless
-public class OwnerService {
+public class VetServices {
 
     OwnerRepository ownerRepository;
 
-    public Optional<OwnerPOJO> createOwner(OwnerPOJO ownerPOJO) {
+    public Optional<OwnerPOJO> creatVet(VetPOJO vetPOJO) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("createOwner");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

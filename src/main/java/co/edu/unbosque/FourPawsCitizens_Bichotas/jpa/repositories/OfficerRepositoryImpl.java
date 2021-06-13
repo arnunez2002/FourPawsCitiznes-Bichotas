@@ -1,26 +1,27 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.repositories;
 
+import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.Official;
 import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.Owner;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
-public class OwnerRepositoryImpl implements OwnerRepository {
+public class OfficerRepositoryImpl  implements OfficerRepository{
 
     private EntityManager entityManager;
 
-    public OwnerRepositoryImpl(EntityManager entityManager) {
+    public OfficerRepositoryImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @Override
-    public Optional<Owner> save(Owner owner) {
+    public Optional<Official> save(Official official) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(owner);
+            entityManager.persist(official);
             entityManager.getTransaction().commit();
-            return Optional.of(owner);
+            return Optional.of(official);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -28,11 +29,8 @@ public class OwnerRepositoryImpl implements OwnerRepository {
     }
 
     @Override
-    public List<Owner> findByNeighborhood(String neighborhood) {
-        List<Owner> owners = entityManager.createQuery("SELECT b FROM Owner b WHERE b.neighborhood = :neighborhood", Owner.class)
-                .setParameter("neighborhood", neighborhood).getResultList();
-        return owners != null ? owners: null;
+    public List<Owner> findAll() {
+        return null;
     }
-
 
 }

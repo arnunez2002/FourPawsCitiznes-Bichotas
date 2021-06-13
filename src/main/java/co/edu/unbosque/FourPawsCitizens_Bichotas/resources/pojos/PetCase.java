@@ -1,13 +1,13 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos;
 
-public class Case {
+public class PetCase {
     private int case_id;
     private String created_at;
     private String type;
     private String description;
     private int pet_id;
 
-    public Case(int case_id, String created_at, String type, String description, int pet_id) {
+    public PetCase(int case_id, String created_at, String type, String description, int pet_id) {
         this.case_id = case_id;
         this.created_at = created_at;
         this.type = type;

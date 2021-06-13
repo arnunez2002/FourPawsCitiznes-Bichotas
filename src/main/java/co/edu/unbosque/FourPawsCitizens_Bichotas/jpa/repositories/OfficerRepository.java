@@ -1,14 +1,15 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.repositories;
 
+import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.Official;
 import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.Owner;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface OwnerRepository {
+public interface OfficerRepository {
 
-    Optional<Owner> save(Owner owner);
+    Optional<Official> save(Official official);
 
-    List<Owner> findByNeighborhood(String neighborhood);
+    List<Owner> findAll();
 
 }
