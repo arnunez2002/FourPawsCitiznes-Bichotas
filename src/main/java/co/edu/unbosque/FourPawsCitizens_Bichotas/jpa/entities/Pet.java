@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name = "Pet")
 @NamedQueries({
         @NamedQuery(name = "Pet.findById", query = "SELECT b FROM Pet b WHERE b.id=: id"),
-        @NamedQuery(name = "Pet.findAll",
+        @NamedQuery(name = "Book.findAll",
                 query= "SELECT b FROM Pet b")
 })
 
@@ -49,7 +49,15 @@ public class Pet {
     private List<Visit> visitList = new ArrayList<>();
 
 
-
+    public Pet (String microchip,String name,String race,String size,String sex,String picture,Long id){
+        this.microchip=microchip;
+        this.name=name;
+        this.race=race;
+        this.size=size;
+        this.sex=sex;
+        this.picture=picture;
+        this.id=id;
+    }
 
     public Pet() {
     }
@@ -130,4 +138,11 @@ public class Pet {
         this.owner_id = owner_id;
     }
 
+    public List<Visit> getVisitList() {
+        return visitList;
+    }
+
+    public void setVisitList(List<Visit> visitList) {
+        this.visitList = visitList;
+    }
 }

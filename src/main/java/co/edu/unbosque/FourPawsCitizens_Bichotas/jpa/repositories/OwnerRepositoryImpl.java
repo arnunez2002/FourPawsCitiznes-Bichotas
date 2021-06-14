@@ -15,6 +15,14 @@ public class OwnerRepositoryImpl implements OwnerRepository {
     }
 
     @Override
+    public Optional<Owner> findByNeighborhood(String neighborhood) {
+        Owner owner  = entityManager.createNamedQuery("Owner.findByNeighborhood", Owner.class)
+.setParameter("neighborhood", neighborhood)
+        .getSingleResult();
+        return owner!=null ? Optional.of(owner): Optional.empty();
+    }
+
+    @Override
     public Optional<Owner> save(Owner owner) {
         try {
             entityManager.getTransaction().begin();
@@ -28,10 +36,37 @@ public class OwnerRepositoryImpl implements OwnerRepository {
     }
 
     @Override
+<<<<<<< HEAD
+    public List<Owner> findAll() {
+          return entityManager.createQuery("from owners ").getResultList();
+    }
+
+
+    public void refresh(Long id, String name, String address, String neighborhood){
+        Owner owner = entityManager.find(Owner.class, id);
+
+        if(owner!=null){
+            try{
+                entityManager.getTransaction().begin();
+
+                owner.setPersonId(id);
+                owner.setName(name);
+                owner.setAddress(address);
+                owner.setNeighborhood(neighborhood);
+                entityManager.getTransaction().commit();
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+
+=======
     public List<Owner> findByNeighborhood(String neighborhood) {
         List<Owner> owners = entityManager.createQuery("SELECT b FROM Owner b WHERE b.neighborhood = :neighborhood", Owner.class)
                 .setParameter("neighborhood", neighborhood).getResultList();
         return owners != null ? owners: null;
+>>>>>>> origin/master
     }
 
 

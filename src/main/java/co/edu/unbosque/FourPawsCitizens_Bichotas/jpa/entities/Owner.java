@@ -9,10 +9,10 @@ import java.util.List;
 @Table(name = "Owner")
 @PrimaryKeyJoinColumn
 
-  //@@NamedQueries({
-  //       @NamedQuery(name = "Owner.findByName",
-  //       query = "SELECT a FROM Owner a WHERE a.name = :name")
-  //})
+  @NamedQueries({
+        @NamedQuery(name = "Owner.findByNeighborhood",
+         query = "SELECT a FROM owners a WHERE a.neighborhood = :neighborhood")
+  })
 
 
 public class Owner extends UserApp {
