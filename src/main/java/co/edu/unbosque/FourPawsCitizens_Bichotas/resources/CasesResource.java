@@ -1,6 +1,6 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.resources;
 
-import co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos.Case;
+import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.PetCase;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,10 +15,10 @@ public class CasesResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response list() {
 
-        List<Case> cases = new ArrayList<Case>();
-        cases.add(new Case(1,"Today","Perdida","Someone was EVIL",1));
-        cases.add(new Case(2,"Today","Robo","Poor thing got an arrow to the knee",2));
-        cases.add(new Case(1,"Today","fallecimiento","Someone was EVIL",3));
+        List<PetCase> cases = new ArrayList<PetCase>();
+        cases.add(new PetCase("h", "h", null));
+        cases.add(new PetCase("h", "h", null));
+        cases.add(new PetCase("h", "h", null));
 
 
         return Response.ok()
@@ -31,11 +31,11 @@ public class CasesResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response listaSexo(@PathParam("type") String type) {
 
-        List<Case> cases = new ArrayList<Case>();
-        cases.add(new Case(1,"Today","esterilización","Someone was EVIL",1));
-        cases.add(new Case(2,"Today","implantación de microchip","Poor thing got an arrow to the knee",2));
-        cases.add(new Case(1,"Today","vacunación","Someone was EVIL",3));
-        List<Case> cases2 = new ArrayList<Case>();
+        List<PetCase> cases = new ArrayList<PetCase>();
+        cases.add(new PetCase("h", "h", null));
+        cases.add(new PetCase("h", "h", null));
+        cases.add(new PetCase("h", "h", null));
+        List<PetCase> cases2 = new ArrayList<PetCase>();
         for (int i = 0; i < cases.size(); i++) {
             if (cases.get(i).getType().equals(type)) {
                 cases2.add(cases.get(i));
@@ -52,10 +52,10 @@ public class CasesResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response listaSexo() {
 
-        List<Case> cases = new ArrayList<Case>();
-        cases.add(new Case(1,"Today","esterilización","Someone was EVIL",1));
-        cases.add(new Case(2,"Today","implantación de microchip","Poor thing got an arrow to the knee",2));
-        cases.add(new Case(1,"Today","vacunación","Someone was EVIL",3));
+        List<PetCase> cases = new ArrayList<PetCase>();
+        cases.add(new PetCase("h", "h", null));
+        cases.add(new PetCase("h", "h", null));
+        cases.add(new PetCase("h", "h", null));
 
 
         return Response.ok()
@@ -67,9 +67,9 @@ public class CasesResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(Case aCase) {
+    public Response create(PetCase aCase) {
 
-        aCase.setCase_id(3);
+        aCase.setCreated_ad("hoy");
 
         return Response.status(Response.Status.CREATED)
                 .entity(aCase)

@@ -18,6 +18,16 @@ public class PetCase {
     @JoinColumn(name = "pet_id")
     private Pet pet_id;
 
+    public PetCase(String created_ad, String type, Pet pet_id) {
+        this.created_ad = created_ad;
+        this.type = type;
+        this.pet_id = pet_id;
+    }
+
+    public PetCase(Pet pet_id) {
+        this.pet_id = pet_id;
+    }
+
     public String getCreated_ad() {
         return created_ad;
     }

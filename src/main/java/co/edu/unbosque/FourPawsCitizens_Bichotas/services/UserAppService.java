@@ -1,13 +1,20 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.services;
 
+import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.Owner;
 import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.UserApp;
+import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.repositories.OwnerRepositoryImpl;
 import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.repositories.UserAppRepository;
 import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.repositories.UserAppRepositoryImpl;
+import co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos.OwnerPOJO;
+import co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos.User;
+import co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos.UserPojo;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.swing.text.html.Option;
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Stateless
@@ -34,9 +41,10 @@ public class UserAppService {
                 return Optional.of(user.get().getRole());
             }
         }
-
         return Optional.empty();
 
     }
-
+    public Optional<User> createUser(User user) {
+        return null;
+    }
 }

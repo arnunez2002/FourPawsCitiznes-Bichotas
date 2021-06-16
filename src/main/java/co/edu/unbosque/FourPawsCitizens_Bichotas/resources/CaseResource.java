@@ -1,6 +1,8 @@
 package co.edu.unbosque.FourPawsCitizens_Bichotas.resources;
 
-import co.edu.unbosque.FourPawsCitizens_Bichotas.resources.pojos.Case;
+
+
+import co.edu.unbosque.FourPawsCitizens_Bichotas.jpa.entities.PetCase;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -11,7 +13,7 @@ public class CaseResource {
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public Response modify(@PathParam("pet_id") Integer pet_id, @PathParam("case_id") Integer case_id, Case aCase) {
+    public Response modify(@PathParam("pet_id") Integer pet_id, @PathParam("case_id") Integer case_id, PetCase aCase) {
 
         return Response.ok()
                 .entity(aCase)

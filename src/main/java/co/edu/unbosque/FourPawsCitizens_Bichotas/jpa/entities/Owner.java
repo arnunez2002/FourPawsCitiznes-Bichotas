@@ -46,6 +46,7 @@ public class Owner extends UserApp {
         this.neighborhood = neighborhood;
     }
 
+
     public Long getPersonId() {
         return personId;
     }
